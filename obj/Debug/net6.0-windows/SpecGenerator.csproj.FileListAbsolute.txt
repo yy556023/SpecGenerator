@@ -1,0 +1,16 @@
+D:\repo\SpecGenerator\bin\Debug\net6.0-windows\SpecGenerator.exe
+D:\repo\SpecGenerator\bin\Debug\net6.0-windows\SpecGenerator.deps.json
+D:\repo\SpecGenerator\bin\Debug\net6.0-windows\SpecGenerator.runtimeconfig.json
+D:\repo\SpecGenerator\bin\Debug\net6.0-windows\SpecGenerator.dll
+D:\repo\SpecGenerator\bin\Debug\net6.0-windows\SpecGenerator.pdb
+D:\repo\SpecGenerator\obj\Debug\net6.0-windows\SpecGenerator.SpecGenerator.resources
+D:\repo\SpecGenerator\obj\Debug\net6.0-windows\SpecGenerator.csproj.GenerateResource.cache
+D:\repo\SpecGenerator\obj\Debug\net6.0-windows\SpecGenerator.GeneratedMSBuildEditorConfig.editorconfig
+D:\repo\SpecGenerator\obj\Debug\net6.0-windows\SpecGenerator.AssemblyInfoInputs.cache
+D:\repo\SpecGenerator\obj\Debug\net6.0-windows\SpecGenerator.AssemblyInfo.cs
+D:\repo\SpecGenerator\obj\Debug\net6.0-windows\SpecGenerator.csproj.CoreCompileInputs.cache
+D:\repo\SpecGenerator\obj\Debug\net6.0-windows\SpecGenerator.dll
+D:\repo\SpecGenerator\obj\Debug\net6.0-windows\refint\SpecGenerator.dll
+D:\repo\SpecGenerator\obj\Debug\net6.0-windows\SpecGenerator.pdb
+D:\repo\SpecGenerator\obj\Debug\net6.0-windows\SpecGenerator.genruntimeconfig.cache
+D:\repo\SpecGenerator\obj\Debug\net6.0-windows\ref\SpecGenerator.dll
