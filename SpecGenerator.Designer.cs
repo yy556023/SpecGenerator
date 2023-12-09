@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SpecGenerator));
             MenuListBox = new MenuItem();
             MenuNameTextBox = new TextBox();
             PageListBox = new MenuItem();
@@ -47,10 +48,12 @@
             // 
             MenuListBox.FormattingEnabled = true;
             MenuListBox.ItemHeight = 15;
+            MenuListBox.ItemName = "";
             MenuListBox.Location = new Point(12, 41);
             MenuListBox.Name = "MenuListBox";
             MenuListBox.Size = new Size(136, 244);
             MenuListBox.TabIndex = 3;
+            MenuListBox.Click += MenuListBox_Click;
             // 
             // MenuNameTextBox
             // 
@@ -62,12 +65,15 @@
             // 
             // PageListBox
             // 
+            PageListBox.DisplayMember = "ItemName";
             PageListBox.FormattingEnabled = true;
             PageListBox.ItemHeight = 15;
+            PageListBox.ItemName = "";
             PageListBox.Location = new Point(281, 41);
             PageListBox.Name = "PageListBox";
             PageListBox.Size = new Size(136, 244);
             PageListBox.TabIndex = 4;
+            PageListBox.Click += PageListBox_Click;
             // 
             // PageNameTextBox
             // 
@@ -79,8 +85,10 @@
             // 
             // ActionListBox
             // 
+            ActionListBox.DisplayMember = "ItemName";
             ActionListBox.FormattingEnabled = true;
             ActionListBox.ItemHeight = 15;
+            ActionListBox.ItemName = "";
             ActionListBox.Location = new Point(550, 41);
             ActionListBox.Name = "ActionListBox";
             ActionListBox.Size = new Size(136, 244);
@@ -189,12 +197,8 @@
         }
 
         #endregion
-
-        private ListBox MenuListBox;
         private TextBox MenuNameTextBox;
-        private ListBox PageListBox;
         private TextBox PageNameTextBox;
-        private ListBox ActionListBox;
         private TextBox ActionNameTextBox;
         private Button MenuAddButton;
         private Button PageAddButton;
@@ -203,5 +207,8 @@
         private Button MenuRemoveButton;
         private Button PageRemoveButton;
         private Button ActionRemoveButton;
+        private MenuItem MenuListBox;
+        private MenuItem PageListBox;
+        private MenuItem ActionListBox;
     }
 }
