@@ -1,4 +1,5 @@
 ﻿using System.Text;
+using ClosedXML.Excel;
 
 namespace SpecGenerator
 {
@@ -31,7 +32,7 @@ namespace SpecGenerator
             MenuListBox.DataSource = TotalMenu.ChildItems;
             MenuListBox.DisplayMember = "ItemName";
             MenuNameTextBox.Text = string.Empty;
-            MenuListBox.ClearSelected();
+            //MenuListBox.ClearSelected();
         }
 
         private void PageAddButton_Click(object sender, EventArgs e)
@@ -62,7 +63,7 @@ namespace SpecGenerator
             PageListBox.DataSource = selectedItem.ChildItems;
             PageListBox.DisplayMember = "ItemName";
             PageNameTextBox.Text = string.Empty;
-            PageListBox.ClearSelected();
+            //PageListBox.ClearSelected();
         }
 
         private void ActionAddButton_Click(object sender, EventArgs e)
@@ -207,6 +208,50 @@ namespace SpecGenerator
             ActionListBox.DataSource = selectedItem.ChildItems;
             ActionListBox.DisplayMember = "ItemName";
             ActionListBox.ClearSelected();
+        }
+
+        private void ExcelButton_Click(object sender, EventArgs e)
+        {
+            IXLWorkbook wb = new XLWorkbook();
+
+            int row = 1;
+            int column = 1;
+
+            foreach (var menu in TotalMenu.ChildItems)
+            {
+                // ┖ ┕ └ ─ ━
+                // 分頁：審核
+                IXLWorksheet ws = wb.AddWorksheet(menu.ItemName);
+                foreach (var page in menu.ChildItems)
+                {
+                    // 畫面：代付審核
+                    ws.Cell(row++, column).Value = $"Page:{page.ItemName}";
+                    row++;
+                    foreach (var action in page.ChildItems)
+                    {
+                        ws.Cell(row++, column).Value = $"Action:{action.ItemName}";
+                        ws.Cell(row++, column).Value = "Message:成功 => 成功訊息:{successMsg}";
+                        ws.Cell(row++, column).Value = "Message:失敗 => 失敗訊息:{failMsg}";
+                        row++;
+                    }
+                }
+            }
+
+            var di = new DirectoryInfo(Environment.CurrentDirectory);
+            var path = di.FullName + "\\File";
+
+            if (!Directory.Exists(path))
+                Directory.CreateDirectory(path);
+
+            if (wb.Worksheets.Count == 0)
+            {
+                MessageBox.Show("內容不可為空", "操作失敗", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            wb.SaveAs(path + "\\Spec.xlsx");
+
+            MessageBox.Show("檔案已產生完畢", "操作成功", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

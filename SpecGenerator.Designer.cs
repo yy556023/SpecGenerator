@@ -42,6 +42,7 @@
             MenuRemoveButton = new Button();
             PageRemoveButton = new Button();
             ActionRemoveButton = new Button();
+            ExcelButton = new Button();
             SuspendLayout();
             // 
             // MenuListBox
@@ -172,11 +173,22 @@
             ActionRemoveButton.UseVisualStyleBackColor = true;
             ActionRemoveButton.Click += ActionRemoveButton_Click;
             // 
+            // ExcelButton
+            // 
+            ExcelButton.Location = new Point(606, 415);
+            ExcelButton.Name = "ExcelButton";
+            ExcelButton.Size = new Size(75, 23);
+            ExcelButton.TabIndex = 13;
+            ExcelButton.Text = "Excel";
+            ExcelButton.UseVisualStyleBackColor = true;
+            ExcelButton.Click += ExcelButton_Click;
+            // 
             // SpecGenerator
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(774, 450);
+            Controls.Add(ExcelButton);
             Controls.Add(ActionRemoveButton);
             Controls.Add(PageRemoveButton);
             Controls.Add(MenuRemoveButton);
@@ -210,5 +222,6 @@
         private MenuItem MenuListBox;
         private MenuItem PageListBox;
         private MenuItem ActionListBox;
+        private Button ExcelButton;
     }
 }
